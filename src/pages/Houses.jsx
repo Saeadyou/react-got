@@ -1,12 +1,7 @@
-import PageNav from "../components/PageNav";
+import AppLayout from "../components/AppLayout";
 
 function Houses() {
-  return (
-    <main>
-      <PageNav />
-      <section>Houses details</section>
-    </main>
-  );
+  return <AppLayout>Houses Details</AppLayout>;
 }
 
 export default Houses;

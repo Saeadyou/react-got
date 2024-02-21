@@ -1,12 +1,7 @@
-import PageNav from "../components/PageNav";
+import AppLayout from "../components/AppLayout";
 
 function Quotes() {
-  return (
-    <main>
-      <PageNav />
-      <section>Quotes details</section>
-    </main>
-  );
+  return <AppLayout>Quotes Details</AppLayout>;
 }
 
 export default Quotes;

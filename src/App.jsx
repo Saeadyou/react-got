@@ -5,7 +5,7 @@ import Quotes from "./pages/Quotes";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter class>
       <Routes>
         <Route index element={<Houses />} />
         <Route path="persons" element={<Persons />} />

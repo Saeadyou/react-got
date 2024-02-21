@@ -1,12 +1,7 @@
-import PageNav from "../components/PageNav";
+import AppLayout from "../components/AppLayout";
 
 function Persons() {
-  return (
-    <main>
-      <PageNav />
-      <section>Persons details</section>
-    </main>
-  );
+  return <AppLayout>Persons Details</AppLayout>;
 }
 
 export default Persons;
