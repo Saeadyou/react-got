@@ -1,23 +1,32 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function PageNav() {
   return (
     <nav>
-      <ul className="flex justify-center gap-3">
+      <ul className="flex justify-center p-4 uppercase">
         <li>
-          <Link to="/" className=" hover:bg-slate-500">
+          <NavLink
+            to="/"
+            className="p-4 text-[2rem] transition-all hover:bg-[#7b27ca]"
+          >
             Houses
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/persons" className=" hover:bg-slate-500">
+          <NavLink
+            to="/persons"
+            className="p-4 text-[2rem] transition-all hover:bg-[#7b27ca]"
+          >
             Persons
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/quotes" className=" hover:bg-slate-500">
+          <NavLink
+            to="/quotes"
+            className="p-4 text-[2rem] transition-all hover:bg-[#7b27ca]"
+          >
             Quotes
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

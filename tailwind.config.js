@@ -2,7 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    screens: {
+      sm: "31.25em",
+      md: "37.5em",
+      lg: "78.15em",
+    },
+
+    extend: {
+      fontFamily: {
+        sans: ["Cinzel", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

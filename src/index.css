@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+  background-color: #7b27ca;
+  border-radius: 5px;
+  transform: scaleX(1.08);
+  box-shadow: 0 0.5rem 3rem 0.5rem #7b27ca40;
+}
