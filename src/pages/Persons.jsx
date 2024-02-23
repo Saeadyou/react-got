@@ -1,7 +1,13 @@
 import AppLayout from "../components/AppLayout";
+import SearchBar from "../components/SearchBar";
 
 function Persons() {
-  return <AppLayout>Persons Details</AppLayout>;
+  return (
+    <AppLayout>
+      <SearchBar />
+      Persons Details
+    </AppLayout>
+  );
 }
 
 export default Persons;
