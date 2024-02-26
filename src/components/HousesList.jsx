@@ -12,8 +12,7 @@ function HousesList() {
         const data = await res.json();
         setHouses(data);
       } catch {
-        const data = "There was an error during loading data...";
-        console.log(data);
+        console.log("There was an error during loading data...");
       }
     }
     fetchHouses();
@@ -21,9 +20,9 @@ function HousesList() {
 
   return (
     <ul>
-      {houses.map((item) => (
-        <li key={item.slug}>
-          <Link to={`/houses/${item.slug}`}>{item.name}</Link>
+      {houses.map((house) => (
+        <li key={house.slug}>
+          <Link to={`/houses/${house.slug}`}>{house.name}</Link>
         </li>
       ))}
     </ul>
