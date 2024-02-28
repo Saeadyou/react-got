@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-const BASE_URL = "https://api.gameofthronesquotes.xyz";
+const BASE_URL = "https://api.gameofthronesquotes.xyz/v1";
 
 function House() {
   const [house, setHouse] = useState([]);
@@ -10,7 +10,7 @@ function House() {
     function () {
       async function fetchMembers() {
         try {
-          const res = await fetch(`${BASE_URL}/v1/house/${slug}`);
+          const res = await fetch(`${BASE_URL}/house/${slug}`);
           const data = await res.json();
           setHouse(data.at(0).members);
         } catch {
@@ -24,11 +24,16 @@ function House() {
   );
 
   return (
-    <ul>
-      {house.map((member) => (
-        <li key={member.slug}>{member.name}</li>
-      ))}
-    </ul>
+    <div className="flex flex-col">
+      <div className="mb-3 border-b bg-black text-center italic">
+        list of {slug}&apos;s members
+      </div>
+      <ul>
+        {house.map((member) => (
+          <li key={member.slug}>{member.name}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
