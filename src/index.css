@@ -7,3 +7,7 @@
   border-radius: 5px;
   box-shadow: 0 0.5rem 3rem 0.5rem #7b27ca40;
 }
+.spinner {
+  background: conic-gradient(#0000 10%, #ececec);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+}

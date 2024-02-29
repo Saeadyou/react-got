@@ -88,7 +88,6 @@ function Person() {
 
   function handleClick() {
     const rndNum = Math.floor(Math.random() * persons.length);
-    console.log(persons[rndNum].name);
     const rndPerson = persons[rndNum].name;
     getPerson(rndPerson);
   }
