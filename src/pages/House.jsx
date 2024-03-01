@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Spinner from "../components/Spinner";
 const BASE_URL = "https://api.gameofthronesquotes.xyz/v1";
 
 function House() {
   const [house, setHouse] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { slug } = useParams();
 
   useEffect(
@@ -16,6 +18,8 @@ function House() {
         } catch {
           const data = "There was an error during loading data...";
           console.log(data);
+        } finally {
+          setLoading(false);
         }
       }
       fetchMembers();
@@ -25,14 +29,20 @@ function House() {
 
   return (
     <div className="flex flex-col">
-      <div className="mb-3 border-b bg-black text-center italic">
-        list of {slug}&apos;s members
-      </div>
-      <ul>
-        {house.map((member) => (
-          <li key={member.slug}>{member.name}</li>
-        ))}
-      </ul>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <div className="mb-3 border-b bg-black text-center italic">
+            list of {slug}&apos;s members
+          </div>
+          <ul>
+            {house.map((member) => (
+              <li key={member.slug}>{member.name}</li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }

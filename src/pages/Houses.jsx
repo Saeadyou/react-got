@@ -23,7 +23,6 @@ function Houses() {
           setHouses(data);
           setFilteredHouses(data);
         } catch (err) {
-          console.log("There was an error during loading data...");
           setError(err);
         } finally {
           setLoading(false);
