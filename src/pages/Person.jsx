@@ -95,9 +95,9 @@ function Person() {
   return (
     <div className="flex flex-col">
       <div className="mb-3 border-b bg-black text-center italic">{person}</div>
-      <div>House:</div>
+      <div className="mt-4 text-[#b96eff]">House:</div>
       <div>{selectedHouse.current?.name || "❌Without house❌"}</div>
-      <div>Quotations:</div>
+      <div className="mt-4 text-[#b96eff]">Quotations:</div>
       <div>
         <ul>
           {quotes?.map((quote, index) => (

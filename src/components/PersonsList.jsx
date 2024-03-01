@@ -54,7 +54,9 @@ function PersonsList() {
       <ul>
         {persons.map((person) => (
           <i key={person.slug} className="grid grid-cols-2">
-            <Link to={`/persons/${person.name}`}>{person.name}</Link>
+            <Link to={`/persons/${person.name}`} className="text-[#bdddff]">
+              {person.name}
+            </Link>
             <span>{person.house?.name || "❌Without house❌"}</span>
           </i>
         ))}
