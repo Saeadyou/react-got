@@ -37,26 +37,27 @@ function Quotes() {
     <AppLayout>
       <div className="flex flex-col">
         {loading && <Spinner />}
-        {error ? (
-          <p>There was an error during loading data...</p>
-        ) : (
-          <>
-            <div className="mb-3 border-b bg-black text-center italic">
-              Some Quotations
-            </div>
-            <ul className="flex flex-col">
-              {quotes.map((quote, index) => (
-                <i key={index}>{quote.sentence}</i>
-              ))}
-            </ul>
-            <button
-              onClick={handleClick}
-              className="mb-4 mt-8 w-fit cursor-pointer self-center rounded-lg border-0 bg-[#283c50] p-4 uppercase transition-all hover:bg-white hover:text-[#152e38] hover:shadow-[0.2rem_0.3rem_0.5rem_#ffffff4d]"
-            >
-              Update quotations
-            </button>
-          </>
-        )}
+        {!loading &&
+          (error ? (
+            <p>There was an error during loading data...</p>
+          ) : (
+            <>
+              <div className="mb-3 border-b bg-black text-center italic">
+                Some Quotations
+              </div>
+              <ul className="flex flex-col">
+                {quotes.map((quote, index) => (
+                  <i key={index}>{quote.sentence}</i>
+                ))}
+              </ul>
+              <button
+                onClick={handleClick}
+                className="mb-4 mt-8 w-fit cursor-pointer self-center rounded-lg border-0 bg-[#283c50] p-4 uppercase transition-all hover:bg-white hover:text-[#152e38] hover:shadow-[0.2rem_0.3rem_0.5rem_#ffffff4d]"
+              >
+                Update quotations
+              </button>
+            </>
+          ))}
       </div>
     </AppLayout>
   );
