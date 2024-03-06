@@ -1,7 +1,4 @@
-function SearchBar({
-  // searchItem,
-  handleInputChange,
-}) {
+function SearchBar({ handleInputChange }) {
   return (
     <form className="flex w-full justify-center">
       <input

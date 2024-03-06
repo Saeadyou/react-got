@@ -12,6 +12,7 @@ const BASE_URL = "https://api.gameofthronesquotes.xyz/v1";
 
 const initialState = {
   persons: [],
+  filteredPersons: [],
   isLoading: false,
   selectedPerson: {},
   error: "",
@@ -31,34 +32,42 @@ function reducer(state, action) {
         isLoading: false,
         selectedPerson: action.payload,
       };
+    case "filteredPersons/loaded":
+      return {
+        ...state,
+        isLoading: false,
+        filteredPersons: action.payload,
+      };
     default:
       throw new Error("Unknown action type");
   }
 }
 
 function PersonsProvider({ children }) {
-  const [{ persons, isLoading, selectedPerson, error }, dispatch] = useReducer(
-    reducer,
-    initialState,
-  );
+  const [
+    { persons, filteredPersons, isLoading, selectedPerson, error },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
-  useEffect(function () {
-    async function fetchPersons() {
-      dispatch({ type: "loading" });
-
-      try {
-        const res = await fetch(`${BASE_URL}/characters`);
-        const data = await res.json();
-        dispatch({ type: "persons/loaded", payload: data });
-      } catch {
-        dispatch({
-          type: "rejected",
-          payload: "There was an error during loading data...",
-        });
+  useEffect(
+    function () {
+      async function fetchPersons() {
+        try {
+          const res = await fetch(`${BASE_URL}/characters`);
+          const data = await res.json();
+          dispatch({ type: "persons/loaded", payload: data });
+          dispatch({ type: "filteredPersons/loaded", payload: data });
+        } catch {
+          dispatch({
+            type: "rejected",
+            payload: "There was an error during loading data...",
+          });
+        }
       }
-    }
-    fetchPersons();
-  }, []);
+      fetchPersons();
+    },
+    [selectedPerson],
+  );
 
   const getPerson = useCallback(async function getPerson(person) {
     dispatch({ type: "loading" });
@@ -76,13 +85,32 @@ function PersonsProvider({ children }) {
     }
   }, []);
 
+  function handleClick() {
+    const rndNum = Math.floor(Math.random() * persons.length);
+    const rndPerson = persons[rndNum].name;
+    getPerson(rndPerson);
+  }
+
+  function handleInputChange(e) {
+    const searchTerm = e.target.value;
+
+    const filteredItems = persons.filter((person) =>
+      person.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+
+    dispatch({ type: "filteredPersons/loaded", payload: filteredItems });
+  }
+
   return (
     <PersonsContext.Provider
       value={{
         persons,
+        filteredPersons,
         isLoading,
         selectedPerson,
         getPerson,
+        handleClick,
+        handleInputChange,
         error,
       }}
     >

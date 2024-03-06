@@ -72,7 +72,7 @@ import { useParams } from "react-router-dom";
 
 function Person() {
   const { person } = useParams();
-  const { persons, getPerson, selectedPerson, isLoading } = usePersons();
+  const { handleClick, getPerson, selectedPerson, isLoading } = usePersons();
 
   useEffect(
     function () {
@@ -85,12 +85,6 @@ function Person() {
   const selectedHouse = useRef(house);
 
   if (isLoading) return <Spinner />;
-
-  function handleClick() {
-    const rndNum = Math.floor(Math.random() * persons.length);
-    const rndPerson = persons[rndNum].name;
-    getPerson(rndPerson);
-  }
 
   return (
     <div className="flex flex-col">
