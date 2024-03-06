@@ -42,12 +42,14 @@ function Quotes() {
             <p>There was an error during loading data...</p>
           ) : (
             <>
-              <div className="mb-3 border-b bg-black text-center italic">
+              <div className="mb-3 border-b bg-[#303030] text-center italic">
                 Some Quotations
               </div>
               <ul className="flex flex-col">
                 {quotes.map((quote, index) => (
-                  <i key={index}>{quote.sentence}</i>
+                  <i key={index} className="mb-4">
+                    {quote.sentence}
+                  </i>
                 ))}
               </ul>
               <button

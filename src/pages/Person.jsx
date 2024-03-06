@@ -88,14 +88,18 @@ function Person() {
 
   return (
     <div className="flex flex-col">
-      <div className="mb-3 border-b bg-black text-center italic">{person}</div>
+      <div className="mb-3 border-b bg-[#303030] text-center italic">
+        {person}
+      </div>
       <div className="mt-4 text-[#b96eff]">House:</div>
       <div>{selectedHouse.current?.name || "❌Without house❌"}</div>
       <div className="mt-4 text-[#b96eff]">Quotations:</div>
       <div>
         <ul>
           {quotes?.map((quote, index) => (
-            <li key={index}>{quote}</li>
+            <li key={index} className="mb-3">
+              {quote}
+            </li>
           ))}
         </ul>
       </div>

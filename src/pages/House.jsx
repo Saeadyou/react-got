@@ -33,12 +33,14 @@ function House() {
         <Spinner />
       ) : (
         <>
-          <div className="mb-3 border-b bg-black text-center italic">
+          <div className="mb-3 border-b bg-[#303030] px-2 text-center italic">
             list of {slug}&apos;s members
           </div>
           <ul>
             {house.map((member) => (
-              <li key={member.slug}>{member.name}</li>
+              <li key={member.slug} className="mb-4">
+                {member.name}
+              </li>
             ))}
           </ul>
         </>

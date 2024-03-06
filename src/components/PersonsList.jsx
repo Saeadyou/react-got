@@ -7,12 +7,12 @@ function PersonsList() {
   if (isLoading) return <Spinner />;
   return (
     <div className="flex flex-col">
-      <div className="mb-3 border-b bg-black text-center italic">
+      <div className="mb-3 border-b bg-[#303030] text-center italic">
         list of Persons
       </div>
       <ul>
         {filteredPersons.map((person) => (
-          <i key={person.slug} className="grid grid-cols-2">
+          <i key={person.slug} className="mb-4 grid grid-cols-2">
             <Link to={`/persons/${person.name}`} className="text-[#bdddff]">
               {person.name}
             </Link>

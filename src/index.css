@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 50%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/bg.jpg");
+  background-size: 170%;
+  background-position: center;
+  min-height: 100dvh;
+}
+
 .active {
   background-color: #7b27ca;
   border-radius: 5px;
