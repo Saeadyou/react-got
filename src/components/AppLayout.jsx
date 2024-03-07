@@ -2,9 +2,9 @@ import PageNav from "./PageNav";
 
 function AppLayout({ children }) {
   return (
-    <main className="mx-auto my-[4vw] h-[80%] min-h-96 w-[80%] max-w-[80rem] rounded-lg bg-[#152e38] bg-cover pb-8 text-white shadow-[0_1rem_4rem_0.4rem_#fff3] ">
+    <main className="m-0 h-dvh min-h-96  w-full rounded-none bg-[#152e38] bg-cover px-4 text-white sm:px-8 md:mx-auto md:my-[4vw] md:h-[80%] md:w-[80%] md:max-w-[80rem] md:rounded-lg md:shadow-[0_1rem_4rem_0.4rem_#fff3]">
       <PageNav />
-      <section className="flex flex-col items-center justify-center">
+      <section className="mt-10 flex flex-col items-center justify-center">
         {children}
       </section>
     </main>

@@ -7,7 +7,7 @@ function PageNav() {
         <li>
           <NavLink
             to="/"
-            className="p-4 text-[2rem] text-[#bdddff] transition-all hover:bg-[#7b27ca]"
+            className="p-4 text-xl text-[#bdddff] transition-all hover:bg-[#7b27ca] sm:text-[2rem]"
           >
             Houses
           </NavLink>
@@ -15,7 +15,7 @@ function PageNav() {
         <li>
           <NavLink
             to="/persons"
-            className="p-4 text-[2rem] text-[#bdddff] transition-all hover:bg-[#7b27ca]"
+            className="p-4 text-xl text-[#bdddff] transition-all hover:bg-[#7b27ca] sm:text-[2rem]"
           >
             Persons
           </NavLink>
@@ -23,7 +23,7 @@ function PageNav() {
         <li>
           <NavLink
             to="/quotes"
-            className="p-4 text-[2rem] text-[#bdddff] transition-all hover:bg-[#7b27ca]"
+            className="p-4 text-xl text-[#bdddff] transition-all hover:bg-[#7b27ca] sm:text-[2rem]"
           >
             Quotes
           </NavLink>
