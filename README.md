@@ -1,8 +1,18 @@
-# React + Vite
+## Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React version of a [solution](https://github.com/Saeadyou/g-o-thrones) to a skill level test which I had done with Vanilla JS. I created a Single Page Application (SPA) that displays houses, people and quotes from the series Game of Thrones (GOT).
+[The API](https://gameofthronesquotes.xyz/) was used for this.
 
-Currently, two official plugins are available:
+### Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Solution URL: [github.com/Saeadyou/react-got](https://github.com/Saeadyou/react-got)
+- Live Site URL: [react-got-yousefi.vercel.app](https://react-got-yousefi.vercel.app/)
+
+### Built with
+
+- Semantic HTML5 markup
+- TailwindCSS
+- React
+- Context API
+- React Router
+- Vite
